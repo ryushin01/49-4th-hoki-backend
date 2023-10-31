@@ -1,0 +1,27 @@
+{
+  "name": "49-4th-hoki-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "DOTENV_CONFIG_PATH=.env.test jest --setupFiles=dotenv/config",
+    "dev": "DOTENV_CONFIG_PATH=.env.dev nodemon server.js",
+    "start": "DOTENV_CONFIG_PATH=.env.prod nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryushin01/49-4th-hoki-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryushin01/49-4th-hoki-backend/issues"
+  },
+  "homepage": "https://github.com/ryushin01/49-4th-hoki-backend#readme",
+  "dependencies": {
+    "dbmate": "^2.7.0",
+    "dotenv": "^16.3.1",
+    "morgan": "^1.10.0"
+  }
+}
