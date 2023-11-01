@@ -137,7 +137,6 @@ CREATE TABLE `user_interests` (
 CREATE TABLE `users` (
   `id` int NOT NULL,
   `nickname` varchar(10) DEFAULT NULL,
-  `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `profile_image` varchar(512) DEFAULT NULL,
   `sns_id` varchar(50) NOT NULL,
@@ -178,5 +177,6 @@ INSERT INTO `schema_migrations` (version) VALUES
   ('20231031072340'),
   ('20231031072405'),
   ('20231031072433'),
-  ('20231031072645');
+  ('20231031072645'),
+  ('20231101075633');
 UNLOCK TABLES;
