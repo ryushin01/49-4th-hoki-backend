@@ -1,6 +1,6 @@
 -- migrate:up
 CREATE TABLE `users` (
-  `id` int PRIMARY KEY NOT NULL,
+  `id` integer PRIMARY KEY AUTO_INCREMENT,
   `nickname` varchar(10) UNIQUE,
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
