@@ -135,7 +135,7 @@ CREATE TABLE `user_interests` (
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `nickname` varchar(10) DEFAULT NULL,
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
