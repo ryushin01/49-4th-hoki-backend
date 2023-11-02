@@ -5,9 +5,8 @@ CREATE TABLE `users` (
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `profile_image` varchar(512),
-  `sns_id` varchar(50) NOT NULL,
-  `social_id` int NOT NULL,
-  FOREIGN KEY (`social_id`) REFERENCES `socials` (`id`)
+  `provider` varchar(20),
+  `uid` varchar(100) UNIQUE NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- migrate:down
