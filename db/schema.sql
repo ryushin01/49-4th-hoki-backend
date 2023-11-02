@@ -74,7 +74,9 @@ CREATE TABLE `feeds` (
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `interests` (
   `id` int NOT NULL,
-  `name` varchar(20) NOT NULL,
+  `interests1` varchar(20) DEFAULT NULL,
+  `interests2` varchar(20) DEFAULT NULL,
+  `interests3` varchar(20) DEFAULT NULL,
   `user_id` int NOT NULL,
   `feed_id` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -94,19 +96,6 @@ CREATE TABLE `interests` (
 CREATE TABLE `schema_migrations` (
   `version` varchar(128) NOT NULL,
   PRIMARY KEY (`version`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Table structure for table `socials`
---
-
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `socials` (
-  `id` int NOT NULL,
-  `name` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -140,12 +129,11 @@ CREATE TABLE `users` (
   `email` varchar(30) NOT NULL,
   `password` varchar(30) NOT NULL,
   `profile_image` varchar(512) DEFAULT NULL,
-  `sns_id` varchar(50) NOT NULL,
-  `social_id` int NOT NULL,
+  `provider` varchar(20) DEFAULT NULL,
+  `uid` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nickname` (`nickname`),
-  KEY `social_id` (`social_id`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`social_id`) REFERENCES `socials` (`id`)
+  UNIQUE KEY `uid` (`uid`),
+  UNIQUE KEY `nickname` (`nickname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -170,7 +158,6 @@ CREATE TABLE `users` (
 
 LOCK TABLES `schema_migrations` WRITE;
 INSERT INTO `schema_migrations` (version) VALUES
-  ('20231031070709'),
   ('20231031071304'),
   ('20231031072039'),
   ('20231031072340'),
