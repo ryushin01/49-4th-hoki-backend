@@ -1,6 +1,7 @@
 -- migrate:up
 CREATE TABLE `feeds` (
   `id` int PRIMARY KEY NOT NULL,
+  `nickname` varchar(10) UNIQUE,
   `text` varchar(500),
   `is_mine` tinyint NOT NULL,
   `user_id` int NOT NULL,
