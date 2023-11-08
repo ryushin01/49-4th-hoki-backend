@@ -13,7 +13,7 @@ const s3Client = new S3Client({
   },
 });
 
-const allowedExtensions = ['.png', '.jpg', '.jpeg', '.bmp']; // 허용된 파일 확장자 목록을 정의합니다.
+const allowedExtensions = ['.png', '.jpg', '.jpeg', '.bmp', '.gif']; // 허용된 파일 확장자 목록을 정의합니다.
 
 const imageUploader = multer({
   storage: multerS3({
